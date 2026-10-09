@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://drp3qa88uwc3y"]
+
+[ext_resource type="Texture2D" uid="uid://dvkcogaxpj4sm" path="res://icon.svg" id="1_nkvyl"]
+[ext_resource type="PackedScene" uid="uid://d4in6e82ro4xs" path="res://Enemigo/enemigo.tscn" id="2_j4gmg"]
+[ext_resource type="PackedScene" uid="uid://b6v1a7s8f7s0j" path="res://Personaje/personaje.tscn" id="2_qb0hr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lfkbx"]
+size = Vector2(610, 124)
+
+[node name="Escena_Principal" type="Node2D" unique_id=988321458]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1691730089]
+position = Vector2(65, 65)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1240933378]
+scale = Vector2(4.734375, 1)
+texture = ExtResource("1_nkvyl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=437493636]
+shape = SubResource("RectangleShape2D_lfkbx")
+
+[node name="Camera2D" type="Camera2D" parent="StaticBody2D" unique_id=481171447]
+zoom = Vector2(1.87, 1.87)
+
+[node name="Enemigo" parent="StaticBody2D" unique_id=1904850087 instance=ExtResource("2_j4gmg")]
+position = Vector2(207, -108)
+
+[node name="Personaje" parent="." unique_id=800113378 instance=ExtResource("2_qb0hr")]
+position = Vector2(64, -18)
